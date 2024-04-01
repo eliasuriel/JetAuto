@@ -1,0 +1,11 @@
+
+<launch>
+    <!-- Parameters file -->
+    <rosparam file="$(find depth_cam)/config/jetautoClassification.yaml" />
+
+    <!-- Camera Launch -->
+    <include file="$(find jetauto_peripherals)/launch/usb_cam.launch"></include>
+
+    <!-- Nodes -->
+    <node name="Classificator" pkg="depth_cam" type="objectClassificator.py" output='screen'/>
+</launch>
